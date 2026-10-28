@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Special Birthday Surprise For Akanksha Sharma the Great 🎁✨</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&family=Caveat:wght@600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body {
+      background: #090a0f; color: #333; min-height: 100vh; overflow-x: hidden;
+      position: relative; -webkit-tap-highlight-color: transparent; 
+    }
+
+    /* PHASE 1: EXACT VIDEO-STYLE FLOWER BLOOM */
+    #introScreen {
+      position: fixed; inset: 0; background: #fdfaf3; 
+      z-index: 9999; overflow: hidden; transition: opacity 1.5s ease-in-out;
+    }
+    .floral-shape {
+      position: absolute; transform: scale(0) rotate(-30deg); opacity: 0;
+      animation: bloomIn 2.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+    .floral-shape svg { width: 100%; height: 100%; }
+
+    @keyframes bloomIn {
+      0% { transform: scale(0) rotate(-30deg); opacity: 0; }
+      20% { transform: scale(1.1) rotate(5deg); opacity: 0.95; }
+      45% { transform: scale(1) rotate(0deg); opacity: 1; }
+      85% { transform: scale(1) rotate(0deg); opacity: 1; filter: blur(0px); }
+      100% { transform: scale(1.6) rotate(15deg); opacity: 0; filter: blur(12px); }
+    }
+
+    /* PHASE 2: HEART & DHANUSH */
+    #heartScreen {
+      position: fixed; inset: 0; background: #fdfaf3;
+      display: none; z-index: 9998; overflow: hidden;
+      transition: opacity 0.8s ease;
+    }
+    .heart-title {
+      position: absolute; top: 15%; width: 100%; text-align: center;
+      font-family: 'Pacifico', cursive; font-size: clamp(1.8rem, 6vw, 2.5rem); color: #ff758c;
+    }
+    #mainHeart {
+      position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);
+      width: clamp(100px, 30vw, 140px); height: clamp(100px, 30vw, 140px); 
+      filter: drop-shadow(0 0 20px rgba(255, 64, 129, 0.6));
+      animation: heartbeat 1.2s infinite; z-index: 2;
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-50%, -50%) scale(1.15); }
+    }
+    
+    #bowCont {
+      position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%);
+      text-align: center; cursor: pointer; z-index: 10;
+    }
+    .bow-icon { 
+      font-size: clamp(3.5rem, 10vw, 5rem); 
+      transform: rotate(-45deg); 
+      display: inline-block; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2)); 
+      transition: transform 0.1s;
+    }
+    #bowCont:active .bow-icon { transform: rotate(-45deg) scale(0.85); }
+    .pull-text { font-size: 0.9rem; letter-spacing: 2px; font-weight: 700; color: #888; margin-top: 5px; }
+
+    #arrowProj {
+      position: absolute; bottom: calc(10% + 50px); left: 50%; transform: translateX(-50%);
+      display: none; z-index: 9999; pointer-events: none;
+    }
+
+    /* PHASE 3: STARRY SURPRISE CARD (Gift Box) */
+    #startScreen {
+      display: none; flex-direction: column; align-items: center; justify-content: center;
+      min-height: 100vh; width: 100%; position: fixed; inset: 0;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      z-index: 9997; overflow: hidden;
+      animation: fadeIn 1s ease forwards;
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .star {
+      position: absolute; background: #fff; border-radius: 50%;
+      animation: twinkle infinite alternate ease-in-out;
+    }
+    @keyframes twinkle { 0% { opacity: 0.2; } 100% { opacity: 0.9; box-shadow: 0 0 5px #fff; } }
+
+    .surprise-card {
+      background: rgba(25, 25, 30, 0.4); border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px; padding: clamp(30px, 8vw, 45px) 20px;
+      text-align: center; color: #fff; max-width: 90%; width: 340px;
+      backdrop-filter: blur(8px); z-index: 10;
+      animation: floatCard 4s infinite ease-in-out;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    @keyframes floatCard { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    .card-icon { width: 70px; margin: 0 auto 15px; animation: bounce 2.5s infinite; }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .card-title { font-size: 0.9rem; letter-spacing: 4px; font-weight: 500; color: #ccc; text-transform: uppercase; margin-bottom: 5px; }
+    .card-name { font-family: 'Pacifico', cursive; font-size: 3rem; color: #ff758c; margin-bottom: 5px; }
+    .card-sub { font-size: 0.85rem; color: #777; margin-bottom: 35px; }
+    .unwrap-btn {
+      background: linear-gradient(90deg, #ff758c, #ff9a44); border: none; padding: 14px 40px; border-radius: 30px;
+      color: #fff; font-weight: 600; font-size: 1.1rem; cursor: pointer;
+      transition: transform 0.2s; box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4);
+    }
+    .unwrap-btn:active { transform: scale(0.95); }
+
+    /* PHASE 4: MOVING PHOTOS BACKGROUND */
+    .bg-photo-wall {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      display: none; justify-content: center; gap: 8px; padding: 0 5px; z-index: 1; pointer-events: none;
+      overflow: hidden; opacity: 0.85; 
+    }
+    .bg-overlay {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(255, 240, 245, 0.6);
+      z-index: 2; pointer-events: none; display: none; 
+    }
+    .photo-col { flex: 1; display: flex; flex-direction: column; gap: 8px; height: fit-content; max-width: 25%; }
+    .col-track { display: flex; flex-direction: column; gap: 8px; will-change: transform; }
+    .bg-photo-item { width: 100%; height: 140px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(255, 182, 193, 0.6); }
+    .col-up .col-track { animation: scrollUp 20s linear infinite; }
+    .col-down .col-track { animation: scrollDown 20s linear infinite; }
+    @keyframes scrollUp { 0% { transform: translate3d(0,0,0); } 100% { transform: translate3d(0,-50%,0); } }
+    @keyframes scrollDown { 0% { transform: translate3d(0,-50%,0); } 100% { transform: translate3d(0,0,0); } }
+
+    /* PHASE 5: 5-SECOND PHOTO POPUP */
+    #photoPopupOverlay {
+      position: fixed; inset: 0; background: rgba(255, 255, 255, 0.9);
+      display: none; align-items: center; justify-content: center; z-index: 9999; flex-direction: column;
+    }
+    .popup-container {
+      position: relative; width: 85vw; max-width: 300px; height: 50vh; max-height: 380px; display: flex; align-items: center; justify-content: center;
+    }
+    .popup-img {
+      position: absolute; width: 100%; height: 100%; object-fit: cover; border-radius: 15px; border: 4px solid #fff;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2); opacity: 0; transform: scale(0.8); transition: all 0.4s ease;
+    }
+    .popup-img.active { opacity: 1; transform: scale(1); z-index: 5; }
+    .popup-timer-bar { width: 220px; height: 5px; background: #ddd; border-radius: 5px; margin-top: 25px; overflow: hidden; }
+    .popup-timer-fill { width: 0%; height: 100%; background: #fc6076; transition: width 4.8s linear; }
+    .popup-caption-text { color: #d81b60; font-size: 1.5rem; font-family: 'Caveat', cursive; margin-top: 15px; font-weight: 700; }
+
+    /* PHASE 6: GRAND BIRTHDAY POPUP */
+    #grandPopupOverlay {
+      position: fixed; inset: 0; background: rgba(0, 0, 0, 0.7); display: none; align-items: center; justify-content: center; z-index: 10000; padding: 15px;
+    }
+    .grand-card {
+      background: #fff; border: 3px solid #ff758c; border-radius: 20px; padding: 25px; text-align: center; max-width: 400px; width: 100%;
+      animation: popInGrand 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; transform: scale(0.8); opacity: 0;
+    }
+    @keyframes popInGrand { to { transform: scale(1); opacity: 1; } }
+    .grand-wish { font-family: 'Pacifico', cursive; font-size: 2.5rem; color: #d81b60; margin-bottom: 5px; }
+    .grand-name { font-size: 2rem; font-weight: 700; color: #ff4081; display: block; margin-bottom: 15px; }
+    .grand-msg { font-weight: 600; font-size: 1.1rem; color: #333; margin-bottom: 25px; line-height: 1.5; }
+    .btn-read-msg {
+      background: linear-gradient(45deg, #ff4081, #ff758c); border: none; padding: 12px 25px; border-radius: 30px; color: #fff; font-weight: 700; font-size: 1.1rem; cursor: pointer; width: 100%;
+    }
+
+    /* PHASE 7: MAIN SCRAPBOOK */
+    .main-wrapper { position: relative; z-index: 10; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 15px; }
+    #celebrationScreen {
+      display: none; width: 100%; max-width: 600px; text-align: center; animation: fadeInMsg 0.8s ease forwards; padding-bottom: 40px; margin-top: 10px;
+    }
+    @keyframes fadeInMsg { 0% { opacity: 0; transform: translateY(15px); } 100% { opacity: 1; transform: translateY(0); } }
+    .card {
+      background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(255, 192, 203, 0.9); border-radius: 15px; padding: 18px; margin-bottom: 20px; text-align: left; line-height: 1.7; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .message-text { font-size: 1rem; color: #222; white-space: pre-line; font-weight: 500; }
+    .photo-row-container { background: rgba(255, 255, 255, 0.8); padding: 12px; border-radius: 12px; margin: 15px auto 25px; border: 1px solid rgba(255, 192, 203, 0.5); }
+    .photo-row { display: flex; justify-content: space-between; gap: 8px; }
+    .photo-row img { width: 31%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 6px; }
+    .row-caption { font-family: 'Caveat', cursive; font-size: 1.4rem; color: #d81b60; margin-top: 8px; font-weight: 600; text-align: center; }
+
+  </style>
+</head>
+<body>
+
+  <!-- HIDDEN AUDIO PLAYER FOR MP3 SONG -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- PHASE 1: FULL SCREEN FLOWERS -->
+  <div id="introScreen"></div>
+
+  <!-- PHASE 2: HEART & DHANUSH -->
+  <div id="heartScreen">
+    <div class="heart-title">a little something, for you</div>
+    <div id="mainHeart">
+      <svg viewBox="0 0 32 29.6" width="100%" height="100%">
+        <path fill="#ff4081" d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+      </svg>
+    </div>
+    
+    <div id="arrowProj">
+      <svg viewBox="0 0 24 24" width="30" height="60">
+        <line x1="12" y1="24" x2="12" y2="0" stroke="#ff4081" stroke-width="4"/>
+        <polygon points="12,0 4,12 20,12" fill="#ff4081"/>
+      </svg>
+    </div>
+
+    <div id="bowCont" onclick="shootArrow()">
+      <div class="bow-icon">🏹</div>
+      <div class="pull-text">TAP TO SHOOT</div>
+    </div>
+  </div>
+
+  <!-- PHASE 3: SURPRISE CARD (Gift Box) -->
+  <div id="startScreen">
+    <div class="surprise-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/4213/4213958.png" alt="Gift" class="card-icon" />
+      <div class="card-title">A Surprise For</div>
+      <div class="card-name">Akanksha Sharma the Great❤️❤️</div>
+      <div class="card-sub">- Mayank made this just for you -</div>
+      <button class="unwrap-btn" onclick="startSurpriseFlow()">Unwrap it</button>
+    </div>
+  </div>
+
+  <!-- PHASE 4: BACKGROUND PHOTOS -->
+  <div class="bg-photo-wall" id="bgPhotoWall">
+    <div class="photo-col col-up" id="col1"><div class="col-track"></div></div>
+    <div class="photo-col col-down" id="col2"><div class="col-track"></div></div>
+    <div class="photo-col col-up" id="col3"><div class="col-track"></div></div>
+    <div class="photo-col col-down" id="col4"><div class="col-track"></div></div>
+  </div>
+  <div class="bg-overlay" id="bgOverlay"></div>
+
+  <!-- PHASE 5: PHOTO POPUP -->
+  <div id="photoPopupOverlay">
+    <div class="popup-container" id="popupBox">
+      <img src="1112154.jpeg" class="popup-img active" onerror="this.src='https://picsum.photos/400/500?random=1'">
+      <img src="13.jpg" class="popup-img" onerror="this.src='https://picsum.photos/400/500?random=2'">
+      <img src="11.jpg" class="popup-img" onerror="this.src='https://picsum.photos/400/500?random=3'">
+      <img src="3.jpg" class="popup-img" onerror="this.src='https://picsum.photos/400/500?random=4'">
+    </div>
+    <div class="popup-caption-text">✨ Beautiful Memories... ✨</div>
+    <div class="popup-timer-bar"><div class="popup-timer-fill" id="timerBar"></div></div>
+  </div>
+
+  <!-- PHASE 6: GRAND POPUP -->
+  <div id="grandPopupOverlay">
+    <div class="grand-card">
+      <div class="grand-wish">Happy Birthday! 🎂</div>
+      <span class="grand-name">Akanksha Sharma the Great ✨</span>
+      <p class="grand-msg">
+        Happy Birthday my best friend.<br>Aap hamesha khush rahe bas me itna chahta hu, acche se life enjoy karo bohot tarakki karo.
+      </p>
+      <button class="btn-read-msg" onclick="showScrapbook()">Kuch Dil Ki Baatein... 💌</button>
+    </div>
+  </div>
+
+  <!-- PHASE 7: SCRAPBOOK -->
+  <div class="main-wrapper">
+    <div id="celebrationScreen">
+      
+      <div class="card">
+        <div class="message-text">Me janta hu me aap ko bohot gussa dila deta hu, meri wajah se aap pareshan bhi hoti hogi, I know. But sach to ye hai Akanksha ki tum pehle jaise nahi rahi ab aur na me pehle jaisa raha hu yaar. Sach to ye hai maine tumse bohot pyar kiya hai par kya karu me ab nahi control kar sakta na, ek taraf tum mere dushman ke sath rehti ho, baat karti ho, mere baare me bhi kuch kuch baate bata deti ho. I know tum mujhe ye bolti ho ki "me tumhare baare me kuch nahi bataya" but maine khud padha hai aur suna bhi hai ok.</div>
+      </div>
+      <div class="photo-row-container">
+        <div class="photo-row">
+          <img src="1.jpg" onerror="this.src='https://picsum.photos/300/300?random=11'">
+          <img src="2.jpg" onerror="this.src='https://picsum.photos/300/300?random=12'">
+          <img src="17.jpg" onerror="this.src='https://picsum.photos/300/300?random=13'">
+        </div>
+        <div class="row-caption">Woh waqt alag tha... ✨</div>
+      </div>
+
+      <div class="card">
+        <div class="message-text">Sach to ye hai mujhe uska naam bhi sunna pasand nahi hai, jaise mujhe Shivani meri ex-GF ka bhi naam sunna pasand nahi hai kyunki dono ne mujhe dhokha diya tha, jo ki mujhe 1% bhi pasand nahi hai. Mujhe koi dhokha deta hai na, mujhe uske naam se nafrat ho jaati hai, aur tumne apna param-mitra bana kar rakha hai. Sach to yehi hai me tumse isliye hi door ho raha hu.</div>
+      </div>
+      <div class="photo-row-container">
+        <div class="photo-row">
+          <img src="14.jpg" onerror="this.src='https://picsum.photos/300/300?random=14'">
+          <img src="15.jpg" onerror="this.src='https://picsum.photos/300/300?random=15'">
+          <img src="10.jpg" onerror="this.src='https://picsum.photos/300/300?random=16'">
+        </div>
+        <div class="row-caption">Kyunki jazbaat sacche the... 🥀</div>
+      </div>
+
+      <div class="card">
+        <div class="message-text">Aur sach ye bhi hai me bhi bohot pagal hu, logo se bohot zyada hi pyar kar leta hu. Kabhi kisi ne mujhe theek se pucha hi nahi—"Mayank tum kaise ho?" Aur puch bhi liya to bolenge—"Koi nahi, theek ho jayega", uske aage kuch nahi. Yaar aisa nahi hota na, saamne wale ko tumse acche se baat karni hai toh baat karo usse.</div>
+      </div>
+      <div class="photo-row-container">
+        <div class="photo-row">
+          <img src="5.jpg" onerror="this.src='https://picsum.photos/300/300?random=17'">
+          <img src="7.jpg" onerror="this.src='https://picsum.photos/300/300?random=18'">
+          <img src="155.jpg" onerror="this.src='https://picsum.photos/300/300?random=19'">
+        </div>
+        <div class="row-caption">Dosti ya ummeed? 💭</div>
+      </div>
+
+      <div class="card">
+        <div class="message-text">Sach to ye bhi hai yaar meri kismat hi kharab hai, maine hamesha apni pyaari cheez khoya hai. Aur me pagal logo ke ek baar bolne par unke paas turant chala jaata hu, na kabhi bol hi nahi paya. Bas log uska hi fayda utha lete hain, isliye log meri kadar nahi karte. Aap kaise ho ye puchne ki jagah wo mujh par gussa utaar dete hain, bas isliye ki unke ek bulane par me chala gaya. Aur me kuch bolta nahi hu isliye bas sun leta hu hamesha.</div>
+      </div>
+
+      <div class="card">
+        <div class="message-text">Isliye koi nahi hai mere paas aisa jisko me ye bol saku—"Aap se milna hai, aap aa jaao." Mere time par sabko kaam yaad aata hai ki "Nahi aaj nahi, aaj zyada kaam hai." Maine kabhi ye socha hi nahi ki me thaka hu ya fir fever hai, bas mujhe wo ek baar bulate hain me chala jaata hu. Isliye meri koi izzat nahi karta hai.</div>
+      </div>
+      <div class="photo-row-container">
+        <div class="photo-row">
+          <img src="122.jpeg" onerror="this.src='https://picsum.photos/300/300?random=20'">
+          <img src="1695.jpeg" onerror="this.src='https://picsum.photos/300/300?random=21'">
+          <img src="122212.jpeg" onerror="this.src='https://picsum.photos/300/300?random=22'">
+        </div>
+        <div class="row-caption">Har pal sath, hamesha! 🤝</div>
+      </div>
+
+      <div class="card">
+        <div class="message-text" style="font-weight: 600; color: #d81b60; text-align: center;">Bas me itna bolunga aap apna khayal rakho yaar, mujhe koi pasand nahi karta, aap akeli nahi ho mujhe na-pasand karne wali. Aap khush raho, aur baaki kabhi bhi meri help chahiye ho call ya message kar dena me aa jaunga, ye to aap acche se jaanti ho me kahi bhi aa jaunga ok.<br><br>🎂 Happy Birthday my friend Akanksha! 🎂</div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // =========================================================================
+    // YAHAN AAP APNI 20 BACKGROUND PHOTOS KE NAAM DAAL SAKTE HAIN
+    // Agar future me koi aur link daalna ho (jaise "https://..."), toh yahan daal dein.
+    // =========================================================================
+    const bgPhotosList = [
+      "1111111111.jpg",   // Photo 1
+      "2222222222.jpg",   // Photo 2
+      "3333333333.jpg",   // Photo 3
+      "4444444444.jpg",   // Photo 4
+      "4.jpg",   // Photo 5
+      "6.jpg",   // Photo 6
+      "8.jpg",   // Photo 7
+      "9.jpg",   // Photo 8
+      "12.jpg",   // Photo 9
+      "16.jpg",  // Photo 10
+      "111.jpg",  // Photo 11
+      "1.jpg",  // Photo 12
+      "2.jpg",  // Photo 13
+      "3.jpg",  // Photo 14
+      "5.jpg",  // Photo 15
+      "10.jpg",  // Photo 16
+      "13.jpg",  // Photo 17
+      "14.jpg",  // Photo 18
+      "122212.jpg",  // Photo 19
+      "1112154.jpg"   // Photo 20
+    ];
+
+    // 1. FULL SCREEN FLOWERS TO HEART SCREEN
+    window.addEventListener('load', () => {
+      const intro = document.getElementById('introScreen');
+      const flowerSVGs = [
+        `<svg viewBox="0 0 100 100"><g fill="#fcd0a1"><circle cx="50" cy="20" r="20"/><circle cx="50" cy="80" r="20"/><circle cx="20" cy="50" r="20"/><circle cx="80" cy="50" r="20"/><circle cx="28" cy="28" r="20"/><circle cx="72" cy="72" r="20"/><circle cx="28" cy="72" r="20"/><circle cx="72" cy="28" r="20"/></g><circle cx="50" cy="50" r="15" fill="#f0b67f"/></svg>`,
+        `<svg viewBox="0 0 100 100"><g fill="#c3ebd7"><circle cx="50" cy="20" r="20"/><circle cx="50" cy="80" r="20"/><circle cx="20" cy="50" r="20"/><circle cx="80" cy="50" r="20"/><circle cx="28" cy="28" r="20"/><circle cx="72" cy="72" r="20"/><circle cx="28" cy="72" r="20"/><circle cx="72" cy="28" r="20"/></g><circle cx="50" cy="50" r="15" fill="#9fd3b9"/></svg>`,
+        `<svg viewBox="0 0 100 100"><g fill="#ffdac1"><circle cx="50" cy="20" r="20"/><circle cx="50" cy="80" r="20"/><circle cx="20" cy="50" r="20"/><circle cx="80" cy="50" r="20"/><circle cx="28" cy="28" r="20"/><circle cx="72" cy="72" r="20"/><circle cx="28" cy="72" r="20"/><circle cx="72" cy="28" r="20"/></g><circle cx="50" cy="50" r="15" fill="#ffb7b2"/></svg>`,
+        `<svg viewBox="0 0 100 100"><g fill="#c8b6ff"><circle cx="50" cy="18" r="16"/><circle cx="50" cy="82" r="16"/><circle cx="18" cy="50" r="16"/><circle cx="82" cy="50" r="16"/><circle cx="27" cy="27" r="16"/><circle cx="73" cy="73" r="16"/><circle cx="27" cy="73" r="16"/><circle cx="73" cy="27" r="16"/></g><circle cx="50" cy="50" r="18" fill="#fdffb6"/></svg>`,
+        `<svg viewBox="0 0 100 100"><g fill="#a2d2ff"><circle cx="50" cy="22" r="18"/><circle cx="50" cy="78" r="18"/><circle cx="22" cy="50" r="18"/><circle cx="78" cy="50" r="18"/><circle cx="30" cy="30" r="18"/><circle cx="70" cy="70" r="18"/><circle cx="30" cy="70" r="18"/><circle cx="70" cy="30" r="18"/></g><circle cx="50" cy="50" r="16" fill="#ffafcc"/></svg>`,
+        `<svg viewBox="0 0 100 100"><g fill="#fdffb6"><circle cx="50" cy="15" r="15"/><circle cx="50" cy="85" r="15"/><circle cx="15" cy="50" r="15"/><circle cx="85" cy="50" r="15"/><circle cx="25" cy="25" r="15"/><circle cx="75" cy="75" r="15"/><circle cx="25" cy="75" r="15"/><circle cx="75" cy="25" r="15"/></g><circle cx="50" cy="50" r="22" fill="#c8b6ff"/></svg>`
+      ];
+
+      const numFlowers = window.innerWidth > 768 ? 80 : 50; 
+      for (let i = 0; i < numFlowers; i++) {
+        let f = document.createElement('div');
+        f.className = 'floral-shape';
+        f.innerHTML = flowerSVGs[Math.floor(Math.random() * flowerSVGs.length)];
+        f.style.left = (Math.random() * 110 - 5) + 'vw';
+        f.style.top = (Math.random() * 110 - 5) + 'vh';
+        f.style.width = (Math.random() * 80 + 40) + 'px';
+        f.style.height = f.style.width;
+        f.style.animationDelay = (Math.random() * 1.5) + 's';
+        intro.appendChild(f);
+      }
+
+      setTimeout(() => {
+        intro.style.opacity = '0';
+        document.getElementById('heartScreen').style.display = 'block';
+        setTimeout(() => { intro.innerHTML = ''; intro.style.display = 'none'; }, 1000);
+      }, 3500); 
+    });
+
+    // 2. ARROW SHOOTING LOGIC
+    function playBombExplosionSound() {
+      try {
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine'; osc.frequency.setValueAtTime(140, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(30, audioCtx.currentTime + 0.6);
+        gain.gain.setValueAtTime(1.0, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.6);
+        osc.connect(gain); gain.connect(audioCtx.destination);
+        osc.start(); osc.stop(audioCtx.currentTime + 0.6);
+      } catch (e) {}
+    }
+
+    function shootArrow() {
+      const arrow = document.getElementById('arrowProj');
+      const heart = document.getElementById('mainHeart');
+      if (arrow.style.display === 'block') return; 
+
+      const music = document.getElementById('bgMusic');
+      if(music) {
+          music.volume = 0.6;
+          music.play().catch(e => console.log("Audio block: " + e));
+      }
+
+      arrow.style.display = 'block';
+      arrow.style.transition = 'none';
+      arrow.style.transform = 'translate(-50%, 0)';
+      
+      void arrow.offsetWidth;
+
+      const arrowRect = arrow.getBoundingClientRect();
+      const heartRect = heart.getBoundingClientRect();
+      const distance = arrowRect.top - (heartRect.top + heartRect.height / 2);
+      
+      arrow.style.transition = 'transform 0.4s cubic-bezier(0.3, 0, 0.8, 1)';
+      arrow.style.transform = `translate(-50%, -${distance}px)`;
+      
+      setTimeout(() => {
+        arrow.style.display = 'none';
+        heart.style.display = 'none';
+        
+        const hCenterX = heartRect.left + heartRect.width / 2;
+        const hCenterY = heartRect.top + heartRect.height / 2;
+        confetti({ 
+          particleCount: 150, spread: 100, 
+          origin: { x: hCenterX / window.innerWidth, y: hCenterY / window.innerHeight },
+          colors: ['#ff4081', '#ff758c']
+        });
+        
+        playBombExplosionSound();
+
+        setTimeout(() => {
+          document.getElementById('heartScreen').style.opacity = '0';
+          setTimeout(() => {
+            document.getElementById('heartScreen').style.display = 'none';
+            document.getElementById('startScreen').style.display = 'flex';
+            
+            const startScreen = document.getElementById('startScreen');
+            for (let i = 0; i < 40; i++) {
+              let s = document.createElement('div');
+              s.className = 'star';
+              s.style.left = (Math.random() * 100) + 'vw';
+              s.style.top = (Math.random() * 100) + 'vh';
+              let size = Math.random() * 2 + 1;
+              s.style.width = size + 'px';
+              s.style.height = size + 'px';
+              s.style.animationDuration = (Math.random() * 2 + 1) + 's';
+              s.style.animationDelay = (Math.random() * 2) + 's';
+              startScreen.appendChild(s);
+            }
+          }, 800);
+        }, 1000);
+      }, 400); 
+    }
+
+    // 3. SET BACKGROUND PHOTOS FROM LIST
+    const cols = [
+      document.querySelector('#col1 .col-track'), document.querySelector('#col2 .col-track'),
+      document.querySelector('#col3 .col-track'), document.querySelector('#col4 .col-track')
+    ];
+    
+    let photoIndex = 0; 
+    cols.forEach((track) => {
+      let html = '';
+      for (let repeat = 0; repeat < 2; repeat++) {
+        for (let i = 0; i < 5; i++) {
+          let photoName = bgPhotosList[photoIndex + i]; 
+          html += `<img src="${photoName}" class="bg-photo-item" onerror="this.src='https://picsum.photos/300/300?random=${photoIndex + i}'">`;
+        }
+      }
+      photoIndex += 5; 
+      if (track) track.innerHTML = html;
+    });
+
+    // 4. UNWRAP CLICK FLOW
+    function startSurpriseFlow() {
+      document.getElementById('startScreen').style.display = 'none';
+      document.getElementById('startScreen').innerHTML = ''; 
+      document.body.style.background = '#fff0f5';
+
+      document.getElementById('bgPhotoWall').style.display = 'flex';
+      document.getElementById('bgOverlay').style.display = 'block';
+
+      const popupOverlay = document.getElementById('photoPopupOverlay');
+      popupOverlay.style.display = 'flex';
+      setTimeout(() => { document.getElementById('timerBar').style.width = '100%'; }, 50);
+
+      const popupImgs = document.querySelectorAll('.popup-img');
+      let currentIdx = 0;
+      const interval = setInterval(() => {
+        popupImgs[currentIdx].classList.remove('active');
+        currentIdx = (currentIdx + 1) % popupImgs.length;
+        popupImgs[currentIdx].classList.add('active');
+      }, 1000);
+
+      setTimeout(() => {
+        clearInterval(interval);
+        popupOverlay.style.display = 'none';
+        
+        document.getElementById('grandPopupOverlay').style.display = 'flex';
+        confetti({ particleCount: 100, spread: 120, origin: { y: 0.5 }, colors: ['#ff4081', '#ff758c', '#ffd700'] });
+      }, 5000);
+    }
+
+    // 5. SHOW SCRAPBOOK
+    function showScrapbook() {
+      document.getElementById('grandPopupOverlay').style.display = 'none';
+      document.getElementById('celebrationScreen').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
